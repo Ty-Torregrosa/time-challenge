@@ -3,12 +3,12 @@ Description="uWSGI server instance for timeapi"
 After=network.target
 
 [Service]
-User=www-data
+User=tytorr
 Group=www-data
 
-WorkingDirectory=/home/tytorregrosa/workspace/time-challenge
-Environment=FLASK_ENV=test
-ExecStart=/usr/local/bin/uswgi --ini /home/tytorregrosa/workspace/time-challenge/timeapi.ini
+WorkingDirectory=/home/tytorr/workspace/time-challenge
+# Environment="FLASK_ENV=test"
+ExecStart=/home/tytorr/.local/bin/uwsgi --ini /home/tytorr/workspace/time-challenge/timeapi.ini
 
 [Install]
 WantedBy=multi-user.target

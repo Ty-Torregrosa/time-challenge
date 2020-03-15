@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from flask import Flask, jsonify
 from flask_restful import Api, Resource
@@ -17,4 +17,4 @@ class Time(Resource):
 api.add_resource(Time, "/time", "/time/")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
