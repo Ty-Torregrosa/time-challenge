@@ -27,3 +27,17 @@ The script will use this key to connect to the ec2 instance it spins up to do th
 # Testing
 run the script
 test_blue_green.sh
+
+# Walk through
+
+Idea:
+We have a python app, timeapi.py, that utilizes the Flask framework to create an web app.
+The web app has one endpoint /time, which returns the current time.
+
+The web app can be run as systemd service, load balanced using uwsgi, and served by nginx.
+
+All of this is hosted on an aws vm, created by terraform in an default free aws account.
+
+The time client app (python) sends requests to the time api.
+
+We have a test_blue_green.sh script to deploy the app onto the vm, run the client app and do a blue green deployment of a v2 app. The output of the client app should return zero failed requests to the api.

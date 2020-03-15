@@ -1,10 +1,10 @@
-#!/usr/bin/env python        
+#!/usr/bin/env python3
 import requests, time
 
 def do_loop(hz, dofor):
     outputs = []
     times_to_run = hz * dofor
-    url = "http://localhost:5000/time"
+    url = "http://timeapi.local.com/time"
     
     
     for i in range(times_to_run):
